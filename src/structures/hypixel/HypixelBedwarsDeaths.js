@@ -21,7 +21,7 @@ class HypixelBedwarsDeaths {
 		this.projectileFinalDeaths = data.projectile_final_deaths_bedwars;
 
 		this.explosionDeaths = data.entity_explosion_deaths_bedwars;
-		
+
 		this.explosionFinalDeaths = data.entity_explosion_final_deaths_bedwars;
 
 		this.magicDeaths = data.magic_deaths_bedwars;
@@ -32,4 +32,4 @@ class HypixelBedwarsDeaths {
 
 module.exports = {
 	HypixelBedwarsDeaths
-}
+};
