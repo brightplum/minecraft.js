@@ -1,0 +1,34 @@
+{
+  "name": "mc-api",
+  "version": "1.0.0",
+  "description": "Low-dependency Minecraft API Wrapper (Hypixel, Hive, Mojang, etc)",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GamerCoder215/mc-api.git"
+  },
+  "keywords": [
+    "hypixel",
+    "mojang",
+    "hypixel",
+    "Hypixel",
+    "Mojang",
+    "Hive API",
+    "hive api",
+    "Mojang API",
+    "Hypixel API",
+    "wrapper"
+  ],
+  "author": "GamerCoder215",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/GamerCoder215/mc-api/issues"
+  },
+  "homepage": "https://github.com/GamerCoder215/mc-api#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
