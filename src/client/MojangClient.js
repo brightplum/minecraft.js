@@ -7,7 +7,7 @@ const { MojangPlayer } = require('../structures/mojang/MojangPlayer.js');
 let err = new TypeError('"type" must be a valid string equal to \'uuid\' or \'name\'.')
 class MojangClient {
 	constructor() {
-		
+
 	}
 	async getMojangApp() {
 		const data = await fetchURL('https://api.mojang.com', 'json');
