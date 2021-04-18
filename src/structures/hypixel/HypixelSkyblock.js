@@ -1,0 +1,6 @@
+
+class HypixelSkyblock {
+  constructor(data) {
+
+  }
+}

@@ -1,0 +1,5 @@
+class HypixelSkyblockProfile {
+  constructor(data) {
+
+  }
+}
