@@ -1,6 +1,0 @@
-
-class HypixelSkyblock {
-  constructor(data) {
-
-  }
-}

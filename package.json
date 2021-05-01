@@ -1,14 +1,14 @@
 {
-  "name": "mc-api",
+  "name": "node-minecraft.js",
   "version": "1.0.0",
-  "description": "Low-dependency Minecraft API Wrapper (Hypixel, Hive, Mojang, etc)",
+  "description": "Low-dependency Minecraft API Wrapper (Hypixel, Minehut, Mojang, etc)",
   "main": "index.js",
   "scripts": {
     "test": "node ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GamerCoder215/mc-api.git"
+    "url": "git+https://github.com/brightplum/minecraft.js.git"
   },
   "keywords": [
     "hypixel",
@@ -16,8 +16,10 @@
     "hypixel",
     "Hypixel",
     "Mojang",
-    "Hive API",
-    "hive api",
+    "Minehut",
+    "minehut",
+    "minehut API",
+    "Minehut api",
     "Mojang API",
     "Hypixel API",
     "wrapper"
@@ -25,10 +27,12 @@
   "author": "GamerCoder215",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/GamerCoder215/mc-api/issues"
+    "url": "https://github.com/brightplum/minecraft.js/issues"
   },
-  "homepage": "https://github.com/GamerCoder215/mc-api#readme",
+  "homepage": "https://github.com/brightplum/minecraft.js#readme",
   "dependencies": {
+    "express": "^4.17.1",
+    "jsdoc-template": "git+https://github.com/braintree/jsdoc-template.git",
     "node-fetch": "^2.6.1"
   }
 }

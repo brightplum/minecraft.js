@@ -3,11 +3,13 @@ const { HypixelError } = require('../Errors.js');
 const { HypixelGuild } = require('../structures/hypixel/HypixelGuild.js');
 const { HypixelPlayer } = require('../structures/hypixel/HypixelPlayer.js');
 
-let err = new TypeError('"key" must be defined.')
+let err = new TypeError('"key" must be defined.');
 
+let updateErr = new HypixelError('There was an error fetching the API. This is most likely do to an update. Check back later.');
 /**
-	* The Hypixel Client used for Hypixel API
-*/
+ * Represents the Hypixel Client used in the Hypixel API
+ * @typedef {HypixelClient} object
+ */
 class HypixelClient {
 	/**
 	* @param {string} key Hypixel API Key
@@ -20,14 +22,21 @@ class HypixelClient {
 	* Fetch a Hypixel Player's Account Statistics
 	* @async
 	* @param {string} uuid The UUID Of the Player (use Mojang getPlayer() to transfer username to UUID)
-	* @returns {HypixelPlayer}
+	* @returns {Promise<HypixelPlayer>}
 	*/
 	async getHypixelPlayer(uuid) {
 		const data = await fetchURL
-		(`https://api.hypixel.net/player?uuid=${uuid}&key=${this.key}`, 'json');
+		(`https://api.hypixel.net/player?uuid=${uuid}&key=${this.key}`, 'json')
+		.catch(err => {
+			if (err.type == 'invalid-json') {
+				throw updateErr;
+			} else {
+				throw err;
+			}
+		})
 
 		const friendData = await fetchURL(`https://api.hypixel.net/friends?uuid=${uuid}&key=${this.key}`, 'json');
-		const skyblockData = await fetchURL(`https://api.hypixel.net/skyblock/profiles?uuid=${uuid}&key=${this.key}`);
+		const skyblockData = await fetchURL(`https://api.hypixel.net/skyblock/profiles?uuid=${uuid}&key=${this.key}`, 'json');
 		if (data.success != true) {
 			err = new HypixelError(`${data.cause}`);
 			throw err;
@@ -43,7 +52,7 @@ class HypixelClient {
 	* @async
 	* @param {string} method The method of fetching the guild through the Guild ID, a Guild Member, or a Guild's Name
 	* @param {string} value What the method should search for to fetch the guild.
-	* @returns {HypixelGuild}
+	* @returns {Promise<HypixelGuild>}
 	*/
 	async getHypixelGuild(method, value) {
 		err = new TypeError('"method" must be a valid string equal to \'id\', \'player\', or \'name\'.');

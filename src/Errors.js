@@ -12,12 +12,12 @@ class HypixelError extends Error {
 	}
 }
 
-class HiveError extends Error {
+class MinehutError extends Error {
 	constructor(message) {
 		super(message);
-		this.name = "HiveError";
+		this.name = "MinehutError";
 	}
 }
 module.exports = {
-	MojangError, HypixelError, HiveError
+	MojangError, HypixelError, MinehutError
 }
